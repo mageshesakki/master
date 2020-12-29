@@ -1,0 +1,27 @@
+﻿<customWindow:MainWindow x:Class="GlobussoftTechnologies.ChatApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:customWindow="clr-namespace:GlobussoftTechnologies.ChatApp.Presentation;assembly=GlobussoftTechnologies.ChatApp.Presentation"
+        xmlns:prism="http://prismlibrary.com/" WindowStyle="None"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="MainWindow" Height="680" Width="860">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="38*" />
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <!--Toolbar-->
+        <ContentControl prism:RegionManager.RegionName="ToolbarRegion"></ContentControl>
+        <!--Chatlist region-->
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ChatListRegion"></ContentControl>
+        <!--Chatdetails region-->
+        <ContentControl Grid.RowSpan="2" Grid.Column="1" prism:RegionManager.RegionName="ChatDetailsRegion"></ContentControl>
+    </Grid>
+</customWindow:MainWindow>
