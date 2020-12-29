@@ -99,7 +99,7 @@ namespace GlobussoftTechnologies.ChatlistUIModule.ViewModels
                 if (_message != value)
                 {
                     _message = value;
-                    OnPropertyChanged("UserName");
+                    OnPropertyChanged("Message");
                 }
             }
 
