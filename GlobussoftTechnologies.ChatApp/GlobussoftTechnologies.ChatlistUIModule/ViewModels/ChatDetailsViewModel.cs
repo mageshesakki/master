@@ -199,17 +199,20 @@ namespace GlobussoftTechnologies.ChatlistUIModule.ViewModels
         /// </summary> 
         private void AddDetails()
         {
-            // Save details in database
-            _dataService.AddDetails(CurrentUserId, SelectedUserId, Message);
+            if(!string.IsNullOrEmpty(Message))
+            {
+                // Save details in database
+                _dataService.AddDetails(CurrentUserId, SelectedUserId, Message);
 
-            if (ChatDetails.Count > 0)
-                ChatDetails.Clear();
+                if (ChatDetails.Count > 0)
+                    ChatDetails.Clear();
 
-            // Refresh items
-            ChatDetails = _dataService.GetChatDetails(CurrentUserId, SelectedUserId);
+                // Refresh items
+                ChatDetails = _dataService.GetChatDetails(CurrentUserId, SelectedUserId);
 
-            // Clear message
-            Message = string.Empty;
+                // Clear message
+                Message = string.Empty;
+            }
         }
 
         #endregion Private Method
